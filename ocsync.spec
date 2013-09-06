@@ -32,6 +32,14 @@ community to support the ownCloud client. csync is an implementation of a
 file synchronizer which provides the feature of roaming home directories 
 for Linux clients. csync makes use of libsmbclient in Samba/Windows environments.
 
+%package devel
+Summary:	Development header files and libraries for %{name}
+Group:		Developer/Libraries
+Requires:	%{name} = %{version}
+
+%description devel
+Development header files and libraries for %{name}
+
 %prep
 %setup -q
 
@@ -77,7 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) %{_sysconfdir}/ocsync/ocsync_exclude.conf
 %attr(755,root,root) %{_bindir}/ocsync
 %dir %{_sysconfdir}/ocsync
-%{_libdir}/libocsync.so.*
+%attr(755,root,root) %{_libdir}/libocsync.so.*
 %dir %{_libdir}/ocsync-0
 %{_mandir}/man1/ocsync.1.gz
 
@@ -85,3 +93,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_libdir}/ocsync-0/ocsync_owncloud.so
 %{_libdir}/libhttpbflib.a
+
+%files devel
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libocsync.so
+%{_includedir}/%{name}/*.h
