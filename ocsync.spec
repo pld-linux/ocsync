@@ -1,3 +1,7 @@
+# TODO:
+# * Add subpackage and complile time flags for plugin packages:
+#   * smb backend
+# * Package documentation
 Summary:	A user level bidirectional client only file synchronizer (owncloud version)
 Name:		ocsync
 Version:	0.80.0
@@ -86,7 +90,8 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) %{_sysconfdir}/ocsync/ocsync_exclude.conf
 %attr(755,root,root) %{_bindir}/ocsync
 %dir %{_sysconfdir}/ocsync
-%attr(755,root,root) %{_libdir}/libocsync.so.*
+%attr(755,root,root) %{_libdir}/libocsync.so.*.*.*
+%ghost %{_libdir}/libocsync.so.0
 %dir %{_libdir}/ocsync-0
 %{_mandir}/man1/ocsync.1*
 
