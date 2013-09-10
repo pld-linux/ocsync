@@ -3,38 +3,39 @@ Name:		ocsync
 Version:	0.80.0
 Release:	0.1
 License:	GPL v2
-Group:		Developer/Libraries
+Group:		Libraries
 Source0:	http://download.owncloud.com/download/%{name}-%{version}.tar.bz2
 # Source0-md5:	db46cdb4c710a607dfc062ed0a413b35
 URL:		http://www.csync.org
-BuildRequires:	cmake
 BuildRequires:	check
+BuildRequires:	cmake
 BuildRequires:	doxygen
-BuildRequires:	gcc-c++
 BuildRequires:	iniparser-devel
+BuildRequires:	libstdc++-devel
 BuildRequires:	neon-devel
 BuildRequires:	sqlite3-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-ocsync is the ownCloud version of csync. csync is an implementation of 
-a file synchronizer which provides the feature of roaming home directories 
-for Linux clients.
+ocsync is the ownCloud version of csync. csync is an implementation of
+a file synchronizer which provides the feature of roaming home
+directories for Linux clients.
 
 %package owncloud
 Summary:	Plugin files for using ownCloud backend with libraries %{name}
-Group:		Developer/Libraries
+Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description owncloud
-ocsync is a csync version which is temporarily maintained by the ownCloud
-community to support the ownCloud client. csync is an implementation of a 
-file synchronizer which provides the feature of roaming home directories 
-for Linux clients. csync makes use of libsmbclient in Samba/Windows environments.
+ocsync is a csync version which is temporarily maintained by the
+ownCloud community to support the ownCloud client. csync is an
+implementation of a file synchronizer which provides the feature of
+roaming home directories for Linux clients. csync makes use of
+libsmbclient in Samba/Windows environments.
 
 %package devel
 Summary:	Development header files and libraries for %{name}
-Group:		Developer/Libraries
+Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
@@ -87,7 +88,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_sysconfdir}/ocsync
 %attr(755,root,root) %{_libdir}/libocsync.so.*
 %dir %{_libdir}/ocsync-0
-%{_mandir}/man1/ocsync.1.gz
+%{_mandir}/man1/ocsync.1*
 
 %files owncloud
 %defattr(644,root,root,755)
