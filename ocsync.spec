@@ -24,7 +24,7 @@ for Linux clients.
 %package owncloud
 Summary:	Plugin files for using ownCloud backend with libraries %{name}
 Group:		Developer/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description owncloud
 ocsync is a csync version which is temporarily maintained by the ownCloud
@@ -35,7 +35,7 @@ for Linux clients. csync makes use of libsmbclient in Samba/Windows environments
 %package devel
 Summary:	Development header files and libraries for %{name}
 Group:		Developer/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Development header files and libraries for %{name}
