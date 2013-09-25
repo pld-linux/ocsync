@@ -5,7 +5,7 @@
 Summary:	A user level bidirectional client only file synchronizer (owncloud version)
 Name:		ocsync
 Version:	0.90.0
-Release:	0.1
+Release:	0.2
 License:	GPL v2
 Group:		Libraries
 Source0:	http://download.owncloud.com/download/%{name}-%{version}.tar.bz2
@@ -82,6 +82,9 @@ cd build
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
