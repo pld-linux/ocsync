@@ -4,12 +4,12 @@
 # * Package documentation
 Summary:	A user level bidirectional client only file synchronizer (owncloud version)
 Name:		ocsync
-Version:	0.90.0
-Release:	0.2
+Version:	0.90.2
+Release:	0.1
 License:	GPL v2
 Group:		Libraries
 Source0:	http://download.owncloud.com/download/%{name}-%{version}.tar.bz2
-# Source0-md5:	6f1cfe47d6a7741c6e8df8642de52c0f
+# Source0-md5:	c2a8a19289e4d7e7e8eebf8304ac39bd
 URL:		http://www.csync.org
 BuildRequires:	check
 BuildRequires:	cmake
